@@ -1,0 +1,67 @@
+// Dada uma classe abstrata chamada FormaGeometrica que não possui atributos e possui dois métodos estáticos, conforme o código a seguir: 
+public abstract class FormaGeometrica { 
+abstract double area(); 
+abstract double perimetro(); 
+} 
+
+/* Implemente três classes que serão subclasses da classe FormaGeometrica: Quadrado, Circulo e Retangulo (cada uma deve conter a correta implementação dos métodos da superclasse).
+A classe Quadrado possui um atributo do tipo double chamado lado. 
+A classe Circulo possui um atributo do tipo double chamado raio. 
+A classe Retangulo possui dois atributos do tipo double chamados comprimento e largura. */
+
+	class Quadrado extends FormaGeometrica{
+		double lado; 
+
+		public Quadrado(double lado){
+			this.lado = lado;
+		}
+		@Override
+		 area(){
+			double resultado = lado*lado;
+			return resultado;
+		}
+		@Override
+		perimetro(){
+			double resultado = lado*4;
+			return resultado;
+		}
+	}
+	
+	class Circulo extends FormaGeometrica{
+		double raio; 
+		
+		Circulo(double raio){
+			this.raio = raio;
+		}
+
+		@Override
+		area(){
+			double resultado = Math.PI()*raio;
+		}
+		@Override
+		perimetro(){
+			double resultado = 2*Math.PI()*raio;
+			return resultado;
+		}
+	}
+	
+	class Retangulo extends FormaGeometrica{
+		double comprimento;
+		double largura;
+
+		Retangulo(double comprimento, double largura){
+			this.comprimento = comprimento;
+			this.largura = largura;
+		}
+
+		@Override
+		area(){
+			double resultado = comprimento*largura;
+			return resultado;
+		}
+		@Override
+		perimetro(){
+			double resultado = 2*(comprimento+base);
+			return resultado;
+		}
+	}
